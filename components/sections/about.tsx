@@ -50,10 +50,12 @@ export default function About() {
               </Card>
             </div>
 
-            <Button className="flex items-center gap-2">
-              <Download className="h-4 w-4" />
-              Download Resume
-            </Button>
+            <Button className="flex items-center gap-2" asChild>
+  <a href="/Deepak-Kumar-Resume.pdf" download>
+    <Download className="h-4 w-4" />
+    Download Resume
+  </a>
+</Button>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
