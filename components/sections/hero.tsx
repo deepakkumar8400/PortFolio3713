@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+// Corrected: Added ArrowDown to the import list
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import Header from "@/components/layout/header";
-import Image from "next/image"; // Import the Image component from Next.js
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -15,63 +16,69 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
               Hi, I'm <span className="text-primary">Deepak Kumar</span>
             </h1>
+            {/* Improved: Made the subtitle more specific and impactful */}
             <h2 className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6">
-              Software Developer & Web Development Enthusiast
+              Full-Stack Developer & AI Enthusiast
             </h2>
+            {/* Improved: Added context about your strong DSA background */}
             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg">
-              I specialize in building modern web applications with React, Node.js, and cloud technologies. Passionate
-              about creating AI-powered solutions that solve real-world problems.
+              As a final-year Computer Science student with a strong foundation in Data Structures & Algorithms, 
+              I specialize in building modern web applications with React, Node.js, and cloud technologies.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <Link href="#contact">
-                <Button size="lg">Get In Touch</Button>
-              </Link>
-              <Link href="#projects">
-                <Button variant="outline" size="lg">
-                  View Projects
-                </Button>
-              </Link>
+              <Button size="lg" asChild>
+                <Link href="#contact">Get In Touch</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="#projects">View Projects</Link>
+              </Button>
             </div>
 
             <div className="flex space-x-4">
-              <Link
-                href="https://github.com"
+              {/* Corrected: Updated GitHub link */}
+              <a
+                href="https://github.com/deepakkumar8400"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                aria-label="GitHub Profile"
               >
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
-              </Link>
-              <Link
-                href="https://linkedin.com"
+              </a>
+              {/* Corrected: Updated LinkedIn link */}
+              <a
+                href="https://www.linkedin.com/in/deepak-kumar213243270/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-6 w-6" />
                 <span className="sr-only">LinkedIn</span>
-              </Link>
-              <Link
+              </a>
+              <a
                 href="mailto:0221cs135@niet.co.in"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                aria-label="Email"
               >
                 <Mail className="h-6 w-6" />
                 <span className="sr-only">Email</span>
-              </Link>
+              </a>
             </div>
           </div>
 
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
-              {/* Use the Next.js Image component for optimized images */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg">
+              {/* Reminder: Ensure your image is located at 'public/image/Brand.jpg' */}
               <Image
-                src="/image/Brand.jpg" // Corrected path to the image
+                src="/image/Brand.jpg"
                 alt="Deepak Kumar"
-                width={320} // Set the width of the image
-                height={320} // Set the height of the image
+                width={320}
+                height={320}
                 className="w-full h-full object-cover"
+                priority // Add priority to preload the hero image
               />
             </div>
           </div>
